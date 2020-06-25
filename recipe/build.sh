@@ -7,4 +7,4 @@ set -o xtrace -o nounset -o pipefail -o errexit
 "${PREFIX}/bin/jupyter" labextension install transient-display-data --no-build
 
 # Shared file not to be included.
-[ -f "${PREFIX}/share/jupyter/lab/settings/build_config.json" ] || rm "${PREFIX}/share/jupyter/lab/settings/build_config.json"
+# [ -f "${PREFIX}/share/jupyter/lab/settings/build_config.json" ] && rm "${PREFIX}/share/jupyter/lab/settings/build_config.json"
