@@ -1,5 +1,5 @@
 {% set name = "jupyterlab-transient-display-data" %}
-{% set version = "0.4.0" %}
+{% set version = "0.4.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,8 +7,8 @@ package:
 
 source:
 
-  url: https://github.com/vatlab/transient-display-data/archive/{{ version }}.tar.gz
-  sha256: b593a8f21c7952f2798fed371455e0e3c57b808b9330322b6b0f49c0d0ca0f78
+  url: https://files.pythonhosted.org/packages/3d/59/ed214efcec0b6692566f99892646010c64213971547a66ef2f9de74da2f0/transient-display-data-0.4.2.tar.gz
+  sha256: 7b5d24d45671f53031e763b1263ae043fa298845de5f9b76d5bb30cd4f7b34b7
 
 build:
   number: 0
