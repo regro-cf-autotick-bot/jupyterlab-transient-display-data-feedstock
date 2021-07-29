@@ -7,7 +7,7 @@ package:
 
 source:
 
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/transient-display-data-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/t/transient-display-data/transient-display-data-{{ version }}.tar.gz
   sha256: 7b5d24d45671f53031e763b1263ae043fa298845de5f9b76d5bb30cd4f7b34b7
 
 build:
