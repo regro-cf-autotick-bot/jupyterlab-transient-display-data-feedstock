@@ -1,5 +1,5 @@
 {% set name = "jupyterlab-transient-display-data" %}
-{% set version = "0.4.0" %}
+{% set version = "0.4.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,29 +7,34 @@ package:
 
 source:
 
-  url: https://github.com/vatlab/transient-display-data/archive/{{ version }}.tar.gz
-  sha256: b593a8f21c7952f2798fed371455e0e3c57b808b9330322b6b0f49c0d0ca0f78
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/transient-display-data-{{ version }}.tar.gz
+  sha256: 7b5d24d45671f53031e763b1263ae043fa298845de5f9b76d5bb30cd4f7b34b7
 
 build:
   number: 0
   noarch: python
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
 
 requirements:
   build:
     - nodejs
   host:
-    - jupyterlab
+    - jupyter-packaging
+    - pip
     - python >=3.5
   run:
-    - jupyterlab
+    - jupyterlab >=3.0.0
+    - jupyterlab-transient-display-data
     - nodejs
-    - python >=3.5
+    - python >=3.6
 
 test:
   commands:
-    - jupyter labextension list | grep transient-display-data  # [unix]
-    - jupyter labextension list | findstr transient-display-data  # [win]
+    - jupyter labextension list
     - jupyter lab build
+    - jupyter labextension list 1>labextensions 2>&1  # [unix]
+    - grep "transient-display-data.*enabled.*OK" labextensions  # [unix]
+
 
 about:
   home: https://github.com/vatlab/transient-display-data
