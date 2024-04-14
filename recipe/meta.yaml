@@ -1,14 +1,13 @@
 {% set name = "jupyterlab-transient-display-data" %}
-{% set version = "0.4.3" %}
+{% set version = "0.4.4" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-
-  url: https://pypi.io/packages/source/t/transient-display-data/transient-display-data-{{ version }}.tar.gz
-  sha256: a5692bb7bbda0cf77ddffe802a4b5e101f7458dd909bfe5c799fa4525c5de2b6
+  url: https://pypi.io/packages/source/t/transient-display-data/transient_display_data-{{ version }}.tar.gz
+  sha256: cb9dc673c66cb5ef6d79039e0e261cea3737a06a9e918d5781e1be85d7075f7f
 
 build:
   number: 0
@@ -19,6 +18,9 @@ requirements:
   build:
     - nodejs
   host:
+    - hatch-jupyter-builder
+    - hatch-nodejs-version
+    - hatchling
     - jupyter-packaging
     - pip
     - python >=3.5
